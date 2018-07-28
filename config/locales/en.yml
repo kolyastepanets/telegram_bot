@@ -7,7 +7,7 @@ en:
   help: |
     Change language /start
     Get video /get_video
-    Youtube channels /channels
+    Videos from youtube channels /channels
     Requests send to @nikolay_stepanets
 ru:
   get_video: 'Получить видео'
@@ -18,5 +18,5 @@ ru:
   help: |
     Сменить язык /start
     Получить видео /get_video
-    Список youtube каналов /channels
+    Видео взяты из youtube каналов /channels
     Для связи @nikolay_stepanets
