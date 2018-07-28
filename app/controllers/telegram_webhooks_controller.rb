@@ -2,6 +2,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
   include Telegram::Bot::UpdatesController::MessageContext
 
   before_action :load_user
+  before_action :set_locale
 
   def start!(*)
     text = 'Choose language / Выберите язык'
@@ -95,5 +96,13 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
         last_name: from[:last_name],
         is_bot: from[:is_bot]
       )
+    end
+
+    def set_locale
+      if @user.language.present?
+        I18n.locale = @user.language
+      else
+        I18n.locale = :en
+      end
     end
 end
