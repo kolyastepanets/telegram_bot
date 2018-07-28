@@ -1,6 +1,22 @@
 en:
   get_video: 'Get video'
-  small_description: "Click on button to get short (3min - 5min) video while you are brushing your teeth :). After clicking on button you'll always get a new video. List of available commands press /help"
+  small_description: |
+    Click on button to get short educational (3min - 5min) video while you have 3-5 minutes, for example while brushing teeth :).
+    After clicking on button you'll always get a new video.
+    List of available commands press /help
+  help: |
+    Change language /start
+    Get video /get_video
+    Youtube channels /channels
+    Requests send to @nikolay_stepanets
 ru:
   get_video: 'Получить видео'
-  small_description: 'Нажмите на кнопку чтобы получить короткое видео (3 мин - 5 мин) пока вы чистите зубы :). При нажатии на на кнопку Вы всегда будете получать новое видео. Просмотреть список всех доступных комманд нажмите /help'
+  small_description: |
+    Нажмите на кнопку чтобы получить короткое образовательное видео (3 мин - 5 мин) пока у вас есть 3 - 5 минут, например пока чистите зубы :).
+    При нажатии на на кнопку Вы всегда будете получать новое видео.
+    Просмотреть список всех доступных команд нажмите /help
+  help: |
+    Сменить язык /start
+    Получить видео /get_video
+    Список youtube каналов /channels
+    Для связи @nikolay_stepanets
