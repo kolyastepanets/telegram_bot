@@ -26,7 +26,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
   end
 
   def channels!(*)
-    respond_with :message, text: YoutubeVideo.where(language: I18n.locale).pluck(:channel_name).uniq.join(', ')
+    respond_with :message, text: YoutubeVideo.where(language: @user.language).pluck(:channel_name).uniq.join(', ')
   end
 
   def get_video!(*)
@@ -36,7 +36,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
   def callback_query(data)
     case data
     when 'russian'
-      I18n.default_locale = :ru
+      @user.update(language: 'ru')
       respond_with(
         :message,
         text: I18n.t('small_description'),
@@ -49,7 +49,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
         }
         )
     when 'english'
-      I18n.default_locale = :en
+      @user.update(language: 'en')
       respond_with(
         :message,
         text: I18n.t('small_description'),
@@ -69,7 +69,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
   private
 
     def return_youtube_video
-      @videos = YoutubeVideo.where(language: I18n.locale).pluck(:youtube_id)
+      @videos = YoutubeVideo.where(language: @user.language).pluck(:youtube_id)
       watched_videos = @user.watched_videos
       id = @videos.first
       id = @videos.sample while watched_videos.pluck(:youtube_id).include?(id)
