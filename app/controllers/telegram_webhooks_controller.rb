@@ -37,6 +37,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
   def callback_query(data)
     case data
     when 'russian'
+      I18n.locale = :ru
       @user.update(language: 'ru')
       respond_with(
         :message,
@@ -50,6 +51,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
         }
         )
     when 'english'
+      I18n.locale = :en
       @user.update(language: 'en')
       respond_with(
         :message,
