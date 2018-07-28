@@ -93,4 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   routes.default_url_options = {host: 'while-you-have-5-minutes.herokuapp.com', protocol: 'https'}
+  config.telegram_updates_controller.session_store = :file_store, Rails.root.join('tmp', 'session_store')
 end
