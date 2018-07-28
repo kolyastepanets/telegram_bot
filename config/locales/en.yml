@@ -1,6 +1,6 @@
 en:
   get_video: 'Get video'
-  small_description: "Click on button to get short (3min - 5min) video while you are brushing your teeth :). After clicking on button you'll always get a new video."
+  small_description: "Click on button to get short (3min - 5min) video while you are brushing your teeth :). After clicking on button you'll always get a new video. List of available commands press /help"
 ru:
   get_video: 'Получить видео'
-  small_description: 'Нажмите на кнопку чтобы получить короткое видео (3 мин - 5 мин) пока вы чистите зубы :). При нажатии на на кнопку Вы всегда будете получать новое видео.'
+  small_description: 'Нажмите на кнопку чтобы получить короткое видео (3 мин - 5 мин) пока вы чистите зубы :). При нажатии на на кнопку Вы всегда будете получать новое видео. Просмотреть список всех доступных комманд нажмите /help'

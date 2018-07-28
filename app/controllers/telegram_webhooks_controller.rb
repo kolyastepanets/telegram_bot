@@ -1,14 +1,9 @@
 class TelegramWebhooksController < Telegram::Bot::UpdatesController
   include Telegram::Bot::UpdatesController::MessageContext
 
+  before_action :load_user
+
   def start!(*)
-    # binding.pry
-    @user = User.find_or_create_by(
-      uid: from[:id],
-      first_name: from[:first_name],
-      last_name: from[:last_name],
-      is_bot: from[:is_bot]
-    )
     text = 'Choose language / Выберите язык'
     begin
       respond_with(:message, text: text, reply_markup: {
@@ -26,9 +21,16 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
     end
   end
 
-  # def help!(*)
-  #   respond_with :message, text: t('.content')
-  # end
+  def help!(*)
+    respond_with :message, text: t('.content')
+    # '/start - change language'
+    # "/channels - videos are shown from this channel's list"
+  end
+
+  def channels!(*)
+    respond_with :message, text: t('.content')
+    # respond_with :message, text: YoutubeVideo.where(language: I18n.locale).pluck(:channel_name)
+  end
 
   # def memo!(*args)
   #   if args.any?
@@ -95,14 +97,13 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
     when 'get_video'
       @videos = YoutubeVideo.where(language: I18n.locale).pluck(:youtube_id)
       watched_videos = @user.watched_videos
-      id = videos.first
-      id = videos.sample while watched_videos.pluck(:youtube_id).include?(id)
-      UserVideo.create(user_id: user.id, youtube_video_id: YoutubeVideo.find_by(youtube_id: id).id)
-
+      id = @videos.first
+      id = @videos.sample while watched_videos.pluck(:youtube_id).include?(id)
+      UserYoutubeVideo.create(user_id: @user.id, youtube_video_id: YoutubeVideo.find_by(youtube_id: id).id)
 
       respond_with(
         :message,
-        text: "https://www.youtube.com/watch?v=#{YoutubeVideo.last.youtube_id}",
+        text: "https://www.youtube.com/watch?v=#{id}",
         reply_markup: {
           inline_keyboard: [
             [
@@ -112,6 +113,17 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
         })
     end
   end
+
+  private
+
+    def load_user
+      @user = User.find_or_create_by(
+        uid: from[:id],
+        first_name: from[:first_name],
+        last_name: from[:last_name],
+        is_bot: from[:is_bot]
+      )
+    end
 
   # def message(message)
   #   respond_with :message, text: t('.content', text: message['text'])
