@@ -8,7 +8,14 @@ en:
     Change language /start
     Get video /get_video
     Videos from youtube channels /channels
+    Choose youtube channels to watch /choose_channels
     Requests send to @nikolay_stepanets
+  click_on_channel: some engligh
+  chosen_channels: "Chosen channels for watching: %{channels}"
+  watch_again: "It seems you have already watched everything here: %{channels}. Do you want to watch again?"
+  answer_yes: 'yes'
+  channel_added: 'Channel was added to your watch list'
+  channel_removed: 'Channel was removed from your watch list'
 ru:
   get_video: 'Получить видео'
   small_description: |
@@ -18,5 +25,13 @@ ru:
   help: |
     Сменить язык /start
     Получить видео /get_video
-    Видео взяты из youtube каналов /channels
+    Все youtube каналы /channels
+    Выбрать youtube каналы для просмотра /choose_channels
+    Выбранные youtube каналы /chosen_channels
     Для связи @nikolay_stepanets
+  click_on_channel: Нажмите на кнопку канала чтобы добавить в список или убрать из списка для просмотра
+  chosen_channels: "Выбранные каналы для просмотра: %{channels}"
+  watch_again: "кажется ты все посмотрел здесь: %{channels}. Смотреть еще раз?"
+  answer_yes: 'да'
+  channel_added: 'Канал добавлен в список просмотра'
+  channel_removed: 'Канал удален из списка просмотра'
