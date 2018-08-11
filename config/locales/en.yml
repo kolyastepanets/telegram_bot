@@ -5,10 +5,12 @@ en:
     After clicking on button you'll always get a new video.
     List of available commands press /help
   help: |
-    Change language /start
+    Change video language /start
     Get video /get_video
-    Videos from youtube channels /channels
+    All youtube channels /channels
     Choose youtube channels to watch /choose_channels
+    Your chosen youtube channels /chosen_channels
+    Add youtube channel /add_channel
     Requests send to @nikolay_stepanets
   click_on_channel: Click on channel to add or remove from the list
   chosen_channels: "Chosen channels for watching: %{channels}"
@@ -28,6 +30,7 @@ ru:
     Все youtube каналы /channels
     Выбрать youtube каналы для просмотра /choose_channels
     Выбранные youtube каналы /chosen_channels
+    Добавить канал /add_channel
     Для связи @nikolay_stepanets
   click_on_channel: Нажмите на кнопку канала чтобы добавить в список или убрать из списка для просмотра
   chosen_channels: "Выбранные каналы для просмотра: %{channels}"

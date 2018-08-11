@@ -76,8 +76,8 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
     when 'get_video'
       return_youtube_video
     when 'watch_again'
-      ids = @user.chosen_channels.ids
-      UserYoutubeVideo.where(user: @user, youtube_video: ids).delete_all
+      ids = YoutubeVideo.where(youtube_channel_id: @user.chosen_channels.ids)
+      UserYoutubeVideo.where(user: @user, youtube_video_id: ids).delete_all
       return_youtube_video
     else
       update_youtube_channel_list(data) if channel_names.include?(data)
@@ -102,7 +102,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
     end
 
     def return_youtube_video
-      # @videos = YoutubeVideo.where(youtube_id: 'fjxQ25nDvqQ').or(YoutubeVideo.where(youtube_id: '3aehewYF8MQ')).pluck(:youtube_id)
+      # @videos = YoutubeVideo.where(youtube_id: '0RXRGmxDQnc').or(YoutubeVideo.where(youtube_id: 'iHF2yBJlkjU')).pluck(:youtube_id)
       @videos = YoutubeVideo.where(language: @user.language)
                             .search_for(@user)
                             .pluck(:youtube_id)
@@ -118,7 +118,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
       if @videos.empty?
         respond_with(
           :message,
-          text: I18n.t('watch_again', channels: @user.chosen_channels.pluck(:channel_name).join(', ')),
+          text: I18n.t('watch_again', channels: @user.chosen_channels.pluck(:name).join(', ')),
           reply_markup: {
             inline_keyboard: [
               [

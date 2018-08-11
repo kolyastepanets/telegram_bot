@@ -1,7 +1,9 @@
 class YoutubeVideo < ApplicationRecord
+  belongs_to :youtube_channel
+
   def self.search_for(user)
     if user.chosen_channels.present?
-      where(channel_name: user.chosen_channels.pluck(:channel_name))
+      joins(:youtube_channel).where(youtube_channels: { id: user.chosen_channels.ids })
     else
       all
     end
