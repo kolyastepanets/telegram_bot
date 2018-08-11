@@ -18,6 +18,13 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'faker'
+  gem 'fasterer'
+  gem 'bundler-audit'
 end
 
 group :development do
@@ -25,4 +32,11 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'simplecov',      require: false
+  gem 'simplecov-html', require: false
+  gem 'simplecov-json', require: false
+  gem 'simplecov-rcov', require: false
 end
