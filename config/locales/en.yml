@@ -10,7 +10,7 @@ en:
     Videos from youtube channels /channels
     Choose youtube channels to watch /choose_channels
     Requests send to @nikolay_stepanets
-  click_on_channel: some engligh
+  click_on_channel: Click on channel to add or remove from the list
   chosen_channels: "Chosen channels for watching: %{channels}"
   watch_again: "It seems you have already watched everything here: %{channels}. Do you want to watch again?"
   answer_yes: 'yes'

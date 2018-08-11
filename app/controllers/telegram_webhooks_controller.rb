@@ -149,8 +149,7 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
       @user ||= User.find_or_create_by(
         uid: from[:id],
         first_name: from[:first_name],
-        last_name: from[:last_name],
-        is_bot: from[:is_bot]
+        last_name: from[:last_name]
       )
     end
 

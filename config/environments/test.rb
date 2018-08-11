@@ -43,4 +43,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.telegram_updates_controller.session_store = :memory_store
+  Telegram::Bot::ClientStub.stub_all!
 end
