@@ -45,4 +45,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.telegram_updates_controller.session_store = :memory_store
   Telegram::Bot::ClientStub.stub_all!
+  config.active_job.queue_adapter = :test
 end

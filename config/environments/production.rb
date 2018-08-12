@@ -94,4 +94,5 @@ Rails.application.configure do
 
   routes.default_url_options = {host: 'while-you-have-5-minutes.herokuapp.com', protocol: 'https'}
   config.telegram_updates_controller.session_store = :file_store, Rails.root.join('tmp', 'session_store')
+  config.active_job.queue_adapter = :sidekiq
 end

@@ -63,6 +63,31 @@ class TelegramWebhooksController < Telegram::Bot::UpdatesController
     return_youtube_video
   end
 
+  def add_channel!(*args)
+    if args.any?
+      if args.first.match(/youtube.com\/channel\//)
+        session[:add_channel] = args.first
+        channel_uid = args.first.split('/').last
+        channel = YoutubeChannel.find_by(uid: channel_uid)
+        if channel.present?
+          respond_with :message, text: I18n.t('channel_is_aready_exist')
+        else
+          respond_with :message, text: I18n.t('check_for_videos')
+          AddVideosJob.perform_later(user_id: @user.id, channel_id: channel_uid)
+        end
+      else
+        respond_with :message, text: I18n.t('add_valid_link')
+      end
+    else
+      respond_with :message, text: I18n.t('send_message_with_link')
+      save_context :add_channel!
+    end
+  end
+
+  def message(*)
+    respond_with :message, text: t('help')
+  end
+
   def callback_query(data)
     case data
     when 'russian'

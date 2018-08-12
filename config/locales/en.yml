@@ -18,6 +18,17 @@ en:
   answer_yes: 'yes'
   channel_added: 'Channel was added to your watch list'
   channel_removed: 'Channel was removed from your watch list'
+  videos_added: "%{number_of_videos} videos were added, channel is added to your chosen list"
+  no_videos: 'Sorry, there are no videos with duration less than 5 minutes, channel will not be added'
+  check_for_videos: 'I will check if channel has videos with duration 5 minutes. You will be notified'
+  add_valid_link: 'Add valid link, please'
+  send_message_with_link: 'Send me message with link to youtube channel, for example: https://www.youtube.com/channel/UC6nSFpj9HTCZ5t-N3Rm3-HA'
+  channel_is_aready_exist: 'Channel is already added'
+  updates_12_08_2018: |
+    Hey! Added new functionality to bot:
+    - ability to choose favourite channels to watch
+    - ability to add youtube channels to watch if it has videos with duration 5 minutes
+    press /help
 ru:
   get_video: 'Получить видео'
   small_description: |
@@ -38,3 +49,14 @@ ru:
   answer_yes: 'да'
   channel_added: 'Канал добавлен в список просмотра'
   channel_removed: 'Канал удален из списка просмотра'
+  videos_added: "%{number_of_videos} видео было добавлено, канал был добавлен в список выбранных каналов"
+  no_videos: 'Извините, нет видео длительностью 5 минут, канал не будет добавлен'
+  check_for_videos: 'Я проверю имеет ли канал видео длительностью 5 минут, вы будете уведомлены'
+  add_valid_link: 'Добавьте правильную ссылку пожалуйста'
+  send_message_with_link: 'Отправь мне сообщение ссылкой на youtube канал, например: https://www.youtube.com/channel/UC6nSFpj9HTCZ5t-N3Rm3-HA'
+  channel_is_aready_exist: 'Канал уже добавлен'
+  updates_12_08_2018: |
+    Привет! Добавлена новая функциональность боту:
+    - теперь можно выбирать каналы для просмотра
+    - если нет любымих каналов, можно добавить любимый канал, если у него есть видео длительностью 5 минут
+    Жми /help

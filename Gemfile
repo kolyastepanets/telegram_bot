@@ -13,6 +13,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'telegram-bot'
+gem 'sidekiq'
+gem 'yt', '~> 0.28.0'
 
 group :development, :test do
   gem 'dotenv-rails'

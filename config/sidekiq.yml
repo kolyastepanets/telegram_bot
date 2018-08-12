@@ -1,0 +1,9 @@
+:queues:
+  - [mailers, 2]
+  - [default, 1]
+
+development:
+  :concurrency: 5
+
+production:
+  :concurrency: <%= ENV["RAILS_MAX_THREADS"] || 5 %>
