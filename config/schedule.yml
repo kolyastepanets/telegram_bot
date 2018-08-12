@@ -1,0 +1,9 @@
+weekly_add_new_videos:
+  cron: "0 1 * * 6"
+  class: "AddNewVideosJob"
+  queue: "schedule_job"
+
+test:
+  cron: "0 1 * * 6"
+  class: "TestJob"
+  queue: "schedule_job"

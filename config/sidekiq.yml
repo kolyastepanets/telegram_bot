@@ -1,6 +1,7 @@
 :queues:
   - [mailers, 2]
   - [default, 1]
+  - [schedule_job, 1]
 
 development:
   :concurrency: 5

@@ -15,6 +15,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'telegram-bot'
 gem 'sidekiq'
 gem 'yt', '~> 0.28.0'
+gem 'sidekiq-cron', '~> 0.6.3'
+gem 'rufus-scheduler', '~> 3.4.2'
 
 group :development, :test do
   gem 'dotenv-rails'
