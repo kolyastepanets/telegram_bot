@@ -7,3 +7,8 @@ test:
   cron: "0 1 * * 6"
   class: "TestJob"
   queue: "schedule_job"
+
+awake:
+  cron: "0,25,55 7-23 * * *"
+  class: "AwakeJob"
+  queue: "schedule_job"
