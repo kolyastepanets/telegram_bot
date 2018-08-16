@@ -9,6 +9,6 @@ test:
   queue: "schedule_job"
 
 awake:
-  cron: "0,25,55 7-23 * * *"
+  cron: "0,25,55 4-20 * * *"
   class: "AwakeJob"
   queue: "schedule_job"
